@@ -2,11 +2,14 @@ const searchPhone = () => {
     const searchInput = document.getElementById('input-search');
     const searchValue = searchInput.value;
     searchInput.value = '';
+
+    //empty input error handle
     if (searchValue == '') {
         const showText = document.getElementById('blank');
         showText.style.display = 'block';
     }
     else {
+        //remove the message for error
         const showText = document.getElementById('blank');
         showText.style.display = 'none';
 
@@ -91,6 +94,7 @@ const displayPhoneDetails = (phones) => {
             <p class="card-title"><span class="fw-bold">NFC:</span> ${phones.data.others.NFC}</p>
             <p class="card-title"><span class="fw-bold">Radio:</span> ${phones.data.others.Radio}</p>
             <p class="card-title"><span class="fw-bold">USB:</span> ${phones.data.others.USB}</p>
+            <p class="card-title"><span class="fw-bold">Release Date:</span> ${phones.data.releaseDate ? phones.data.releaseDate : 'Release Date Not Found'}</p>
             </div>
     `;
     phoneDetail.appendChild(div);
