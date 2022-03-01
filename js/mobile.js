@@ -62,7 +62,8 @@ const displayPhoneDetails = (phones) => {
             <p class="card-title">Display-Size:${phones.data.mainFeatures.displaySize}</p>
             <p class="card-title">Memory:${phones.data.mainFeatures.memory}</p>
             <p class="card-title">Sensor:${phones.data.mainFeatures.sensors}</p>
-             <h5 class="card-title">Others Infor</h5>
+             <h5 class="card-title">Others Info</h5>
+            <p class="card-title">Sensor:${phones.data.others.WLAN}</p>
             </div>
     `;
     phoneDetail.appendChild(div);
