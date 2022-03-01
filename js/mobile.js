@@ -1,7 +1,7 @@
 const searchPhone = () => {
     const searchInput = document.getElementById('input-search');
     const searchValue = searchInput.value;
-    // console.log(searchValue);
+    // remove input value
     searchInput.value = '';
 
     const url = `
@@ -14,6 +14,7 @@ const searchPhone = () => {
 const displaySearch = (data) => {
     //console.log(data);
     const searchResult = document.getElementById('search-result');
+    //previous phone item remove
     searchResult.textContent = '';
 
     data.forEach(mobile => {
@@ -21,11 +22,12 @@ const displaySearch = (data) => {
         div.classList.add('col');
         //console.log(mobile.slug)
         div.innerHTML = `
-        <div onclick="showDetails('${mobile.slug}')" class="card m-3">
+        <div class="card m-3">
                 <img height="400px"  src="${mobile.image}" class="card-img-top" alt="image">
                 <div class="card-body m-2">
+                <p class="card-title">${mobile.brand}</p>
                     <h5 class="card-title">${mobile.phone_name}</h5>
-                    <button type="button" class="btn btn-primary">Details</button>
+                    <button onclick="showDetails('${mobile.slug}')" type="button" class="btn btn-secondary">Show Details</button>
                 </div>
         `;
         searchResult.appendChild(div);
@@ -45,7 +47,7 @@ const showDetails = phoneSlug => {
 
 //display single phone details
 const displayPhoneDetails = (phones) => {
-    console.log(phones);
+    // console.log(phones);
     const phoneDetail = document.getElementById('singlePhoneDetail');
     const div = document.createElement('div');
     div.classList.add('card', 'border', 'border-light');
@@ -53,9 +55,15 @@ const displayPhoneDetails = (phones) => {
     phoneDetail.innerHTML = `
     <img height="500px" src="${phones.data.image}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${phones.data.name}</h5>
+            <h4 class="card-title">${phones.data.brand}</h4>
+            <h5 class="card-title">${phones.data.name}</h5>
+            <p class="card-title">Manin Features:</p>
+            <p class="card-title">Storage:${phones.data.mainFeatures.storage}</p>
+            <p class="card-title">Display-Size:${phones.data.mainFeatures.displaySize}</p>
+            <p class="card-title">Memory:${phones.data.mainFeatures.memory}</p>
+            <p class="card-title">Sensor:${phones.data.mainFeatures.sensors}</p>
+             <h5 class="card-title">Others Infor</h5>
             </div>
     `;
     phoneDetail.appendChild(div);
-
 }
