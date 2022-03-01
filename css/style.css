@@ -1,3 +1,5 @@
-h1{
+#result{
+    display:none ;
     text-align: center;
+    color:red;
 }

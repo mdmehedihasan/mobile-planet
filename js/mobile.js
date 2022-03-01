@@ -3,7 +3,6 @@ const searchPhone = () => {
     const searchValue = searchInput.value;
     // remove input value
     searchInput.value = '';
-
     const url = `
     https://openapi.programming-hero.com/api/phones?search=${searchValue}
     `;
@@ -16,6 +15,13 @@ const displaySearch = (data) => {
     const searchResult = document.getElementById('search-result');
     //previous phone item remove
     searchResult.textContent = '';
+
+    //if no result found
+    if (data == 0) {
+        const showText = document.getElementById('result');
+        showText.style.display = 'block';
+    }
+    //showText.innerText = '';
 
     data.forEach(mobile => {
         const div = document.createElement('div');
