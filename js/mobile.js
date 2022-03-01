@@ -38,8 +38,9 @@ const displaySearch = (data) => {
         const showText = document.getElementById('result');
         showText.style.display = 'none';
     }
-
-    data.forEach(mobile => {
+    //fixed for 20 products to show
+    const fixed20 = data.slice(0, 20);
+    fixed20.forEach(mobile => {
         const div = document.createElement('div');
         div.classList.add('col');
         //console.log(mobile.slug)
