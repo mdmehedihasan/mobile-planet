@@ -57,13 +57,18 @@ const displayPhoneDetails = (phones) => {
             <div class="card-body">
             <h4 class="card-title">${phones.data.brand}</h4>
             <h5 class="card-title">${phones.data.name}</h5>
-            <p class="card-title">Manin Features:</p>
-            <p class="card-title">Storage:${phones.data.mainFeatures.storage}</p>
-            <p class="card-title">Display-Size:${phones.data.mainFeatures.displaySize}</p>
-            <p class="card-title">Memory:${phones.data.mainFeatures.memory}</p>
-            <p class="card-title">Sensor:${phones.data.mainFeatures.sensors}</p>
+            <p class="card-title"><span class="fw-bold">Manin Features:</span></p>
+            <p class="card-title"><span class="fw-bold">Storage:</span> ${phones.data.mainFeatures.storage}</p>
+            <p class="card-title"><span class="fw-bold">Display-Size:</span>${phones.data.mainFeatures.displaySize}</p>
+            <p class="card-title"><span class="fw-bold">Memory: </span> ${phones.data.mainFeatures.memory}</p>
+            <p class="card-title"><span class="fw-bold">Sensor:</span> ${phones.data.mainFeatures.sensors}</p>
              <h5 class="card-title">Others Info</h5>
-            <p class="card-title">Sensor:${phones.data.others.WLAN}</p>
+            <p class="card-title"><span class="fw-bold">WLAN:</span> ${phones.data.others.WLAN}</p>
+            <p class="card-title"><span class="fw-bold">Bluetooth:</span> ${phones.data.others.Bluetooth}</p>
+            <p class="card-title"><span class="fw-bold">GPS:</span> ${phones.data.others.GPS}</p>
+            <p class="card-title"><span class="fw-bold">NFC:</span> ${phones.data.others.NFC}</p>
+            <p class="card-title"><span class="fw-bold">Radio:</span> ${phones.data.others.Radio}</p>
+            <p class="card-title"><span class="fw-bold">USB:</span> ${phones.data.others.USB}</p>
             </div>
     `;
     phoneDetail.appendChild(div);
