@@ -1,3 +1,5 @@
+/* lobser font added */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 #result{
     display:none ;
     text-align: center;
@@ -7,4 +9,7 @@
     display:none ;
     text-align: center;
     color:red;
+}
+.site-title{
+    font-family: 'Lobster', cursive;
 }
