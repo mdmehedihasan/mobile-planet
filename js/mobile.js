@@ -2,12 +2,22 @@ const searchPhone = () => {
     const searchInput = document.getElementById('input-search');
     const searchValue = searchInput.value;
     searchInput.value = '';
-    const url = `
+    if (searchValue == '') {
+        const showText = document.getElementById('blank');
+        showText.style.display = 'block';
+    }
+    else {
+        const showText = document.getElementById('blank');
+        showText.style.display = 'none';
+
+        const url = `
     https://openapi.programming-hero.com/api/phones?search=${searchValue}
     `;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displaySearch(data.data))
+        fetch(url)
+            .then(res => res.json())
+            .then(data => displaySearch(data.data))
+    }
+
 }
 const displaySearch = (data) => {
     //console.log(data);
@@ -16,7 +26,7 @@ const displaySearch = (data) => {
     searchResult.textContent = '';
 
     //if no result found
-    if (data == 0) {
+    if (data.length == 0) {
         const showText = document.getElementById('result');
         showText.style.display = 'block';
     }
